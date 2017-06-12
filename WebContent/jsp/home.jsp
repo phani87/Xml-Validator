@@ -47,12 +47,13 @@ XML :
 <br>
 <form action="../XmlProcessor" id="saveForm" name="saveForm">
 <textarea rows="25" cols="100"  id="xml_text" name="xml_content" class="form-control"  style="width: 638px;height: 245px;" disabled><%=name%></textarea> 
-<br><button id="save_xml" onclick="save()" name="get_xml" value="save" class="btn btn-primary">Save</button>
+<br><!-- <button id="save_xml" onclick="save()" name="get_xml" value="save" class="btn btn-primary">Save</button> -->
 <button id="back" onclick="goBack()" class="btn btn-primary">Back</button>
 <input type="hidden" id="back" name="get_xml" value="allxml">
 <%
 if(active_flag.equalsIgnoreCase("A")){
 	out.println("<button id=\"edit_xml\" onclick=\"makeEditable()\" class=\"btn btn-primary\" type=\"button\">Edit</button>");
+	out.println("<button id=\"save_xml\" onclick=\"save()\" name=\"get_xml\" value=\"save\" class=\"btn btn-primary\">Save</button>");
 }
 %>
 </form>
