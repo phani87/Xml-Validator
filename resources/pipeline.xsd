@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Thu Mar 09 2017 17:45:41 GMT-0500 (Eastern Standard Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="pipeline">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="step" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="processor">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="className" type="xs:string"></xs:attribute>                                                         
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="params">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="kv" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="val" type="xs:string" use="required"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="name" type="xs:string" ></xs:attribute>
+                                       <xs:attribute name="whenLastStepStatus" type="xs:string" ></xs:attribute>
+									   <xs:attribute name="stepName" type="xs:string" use="required"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                     <xs:attribute name="pipelineName" type="xs:string" use="required"></xs:attribute>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>
